@@ -1,7 +1,6 @@
 import 'package:expenses/components/transaction_form.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
-import 'components/transaction_form.dart';
 import 'components/transaction_list.dart';
 import 'components/chart.dart';
 import 'models/transaction.dart';
@@ -12,6 +11,7 @@ class ExpensesApp extends StatelessWidget {
   ExpensesApp({Key? key}) : super(key: key);
   final ThemeData tema = ThemeData();
 
+  @override
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,9 +36,24 @@ class ExpensesApp extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.purple, // Cor de fundo
+            foregroundColor: Colors.white, // Cor do texto
+            textStyle: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            foregroundColor: Colors.amber, // Cor do texto
+          ),
+        ),
       ),
     );
   }
+
 }
 
 class MyHomePage extends StatefulWidget {
