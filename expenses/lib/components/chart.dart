@@ -1,7 +1,7 @@
-import 'package:expenses/components/chart_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../models/transaction.dart';
+import 'chart_bar.dart';
 
 class Chart extends StatelessWidget {
   final List<Transaction> recentTransaction;
@@ -41,7 +41,6 @@ class Chart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    groupedTransactions;
     return Card(
       elevation: 6,
       margin: const EdgeInsets.all(20),
@@ -53,11 +52,11 @@ class Chart extends StatelessWidget {
             return Flexible(
               fit: FlexFit.tight,
               child: ChartBar(
-                  label: tr['day'] as String,
-                  value: tr['value'] as double,
-                  percentage: _weekTotalValue == 0
-                      ? 0
-                      : (tr['value'] as double) / _weekTotalValue,
+                label: tr['day'] as String,
+                value: tr['value'] as double,
+                percentage: _weekTotalValue == 0
+                    ? 0
+                    : (tr['value'] as double) / _weekTotalValue,
               ),
             );
           }).toList(),
